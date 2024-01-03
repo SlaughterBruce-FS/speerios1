@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State private var searchText = ""
+    @StateObject var viewModel = SearchViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            
+            
+        }
+        .searchable(text: $searchText)
+        .onChange(of: searchText) { oldValue, newValue in
+            viewModel.fetchUsers(searchText: newValue)
+        }
     }
 }
 
