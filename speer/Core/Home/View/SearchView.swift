@@ -15,11 +15,17 @@ struct SearchView: View {
     var body: some View {
         NavigationStack{
             // users
+            
+            // if searchtext is empty display nothing
             if(searchText == ""){
                 
-            }else if (userTotal == 0){
+            }
+            // if the user count is 0 it will display user not found
+            else if (userTotal == 0){
                 Text("No User Found")
-            } else {
+            } 
+            // display users 
+            else {
                 UserView()
             }
             

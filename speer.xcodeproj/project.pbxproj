@@ -18,6 +18,7 @@
 		496D0F9D2B452D5B0069DFB4 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D0F9C2B452D5B0069DFB4 /* UserCellView.swift */; };
 		496D0F9F2B452D6E0069DFB4 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D0F9E2B452D6E0069DFB4 /* UserView.swift */; };
 		496D0FA22B452DA30069DFB4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 496D0FA12B452DA30069DFB4 /* Kingfisher */; };
+		496D0FA52B45366A0069DFB4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D0FA42B45366A0069DFB4 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		496D0F992B451FF70069DFB4 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		496D0F9C2B452D5B0069DFB4 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		496D0F9E2B452D6E0069DFB4 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		496D0FA42B45366A0069DFB4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		496D0F8C2B45141D0069DFB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				496D0FA32B4536590069DFB4 /* Profile */,
 				496D0F9B2B452D420069DFB4 /* Users */,
 				496D0F902B4514900069DFB4 /* SearchView.swift */,
 			);
@@ -157,6 +160,14 @@
 				496D0F9E2B452D6E0069DFB4 /* UserView.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		496D0FA32B4536590069DFB4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				496D0FA42B45366A0069DFB4 /* Profile.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 				496D0F9D2B452D5B0069DFB4 /* UserCellView.swift in Sources */,
 				496D0F7C2B4512E20069DFB4 /* ContentView.swift in Sources */,
 				496D0F912B4514900069DFB4 /* SearchView.swift in Sources */,
+				496D0FA52B45366A0069DFB4 /* Profile.swift in Sources */,
 				496D0F7A2B4512E20069DFB4 /* speerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
