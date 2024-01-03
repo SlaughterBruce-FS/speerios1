@@ -16,11 +16,12 @@ struct UserCellView: View {
         NavigationStack{
             VStack{
                 NavigationLink{
-                    Profile()
+                    Profile(userId: user.login)
                 } label: {
                     HStack(alignment: .center){
                         // image
-                  
+                        
+                        
                         KFImage(URL(string: user.avatarURL))
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)

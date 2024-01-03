@@ -26,6 +26,7 @@ struct SearchView: View {
             } 
             // display users 
             else {
+                // bring in user view
                 UserView(items: viewModel.items)
             }
             

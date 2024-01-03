@@ -19,6 +19,8 @@
 		496D0F9F2B452D6E0069DFB4 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D0F9E2B452D6E0069DFB4 /* UserView.swift */; };
 		496D0FA22B452DA30069DFB4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 496D0FA12B452DA30069DFB4 /* Kingfisher */; };
 		496D0FA52B45366A0069DFB4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D0FA42B45366A0069DFB4 /* Profile.swift */; };
+		496D0FA92B45484B0069DFB4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D0FA82B45484B0069DFB4 /* ProfileViewModel.swift */; };
+		496D0FAD2B45568C0069DFB4 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 496D0FAC2B45568C0069DFB4 /* Config.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,9 @@
 		496D0F9C2B452D5B0069DFB4 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		496D0F9E2B452D6E0069DFB4 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		496D0FA42B45366A0069DFB4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		496D0FA82B45484B0069DFB4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		496D0FAB2B4556720069DFB4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		496D0FAC2B45568C0069DFB4 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,8 @@
 				496D0F922B4515720069DFB4 /* Model */,
 				496D0F7D2B4512E30069DFB4 /* Assets.xcassets */,
 				496D0F7F2B4512E30069DFB4 /* Preview Content */,
+				496D0FAB2B4556720069DFB4 /* PrivacyInfo.xcprivacy */,
+				496D0FAC2B45568C0069DFB4 /* Config.plist */,
 			);
 			path = speer;
 			sourceTree = "<group>";
@@ -95,6 +102,9 @@
 		496D0F882B4513D50069DFB4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				496D0FAE2B45D73D0069DFB4 /* Follwers */,
+				496D0FA32B4536590069DFB4 /* Profile */,
+				496D0F9B2B452D420069DFB4 /* Users */,
 				496D0F8B2B4514170069DFB4 /* Home */,
 				496D0F892B4513F70069DFB4 /* Root */,
 			);
@@ -129,8 +139,6 @@
 		496D0F8C2B45141D0069DFB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				496D0FA32B4536590069DFB4 /* Profile */,
-				496D0F9B2B452D420069DFB4 /* Users */,
 				496D0F902B4514900069DFB4 /* SearchView.swift */,
 			);
 			path = View;
@@ -165,9 +173,33 @@
 		496D0FA32B4536590069DFB4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				496D0FA42B45366A0069DFB4 /* Profile.swift */,
+				496D0FA72B4548060069DFB4 /* ViewModel */,
+				496D0FA62B4547FC0069DFB4 /* View */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		496D0FA62B4547FC0069DFB4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				496D0FA42B45366A0069DFB4 /* Profile.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		496D0FA72B4548060069DFB4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				496D0FA82B45484B0069DFB4 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		496D0FAE2B45D73D0069DFB4 /* Follwers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Follwers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				496D0F812B4512E30069DFB4 /* Preview Assets.xcassets in Resources */,
+				496D0FAD2B45568C0069DFB4 /* Config.plist in Resources */,
 				496D0F7E2B4512E30069DFB4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +283,7 @@
 				496D0F962B4519D80069DFB4 /* SearchViewModel.swift in Sources */,
 				496D0F982B451EEB0069DFB4 /* User.swift in Sources */,
 				496D0F9F2B452D6E0069DFB4 /* UserView.swift in Sources */,
+				496D0FA92B45484B0069DFB4 /* ProfileViewModel.swift in Sources */,
 				496D0F9D2B452D5B0069DFB4 /* UserCellView.swift in Sources */,
 				496D0F7C2B4512E20069DFB4 /* ContentView.swift in Sources */,
 				496D0F912B4514900069DFB4 /* SearchView.swift in Sources */,

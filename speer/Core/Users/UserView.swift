@@ -14,7 +14,7 @@ struct UserView: View {
         ScrollView{
             // loop through all users that are found
             ForEach(items) { user in
-        // display user cell
+        // display user cell pass users array to user cell view 
                 UserCellView(user: user)
             }
             
