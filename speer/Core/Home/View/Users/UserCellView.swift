@@ -9,7 +9,30 @@ import SwiftUI
 
 struct UserCellView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            HStack(alignment: .center){
+                // image
+                Image("meg")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                
+                // info
+                VStack{
+                    Text("Thee Stallion")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    
+                }
+                Spacer()
+               
+            }
+            .padding(.horizontal)
+            Divider()
+           
+        }
+        .padding(.bottom, 8)
     }
 }
 
