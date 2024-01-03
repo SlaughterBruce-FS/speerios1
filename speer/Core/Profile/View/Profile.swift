@@ -50,8 +50,10 @@ struct Profile: View {
                     
                     HStack{
                         //folowers
-                        Button{
-                            print("followers")
+                        NavigationLink{
+                            if let followerLink = path?.followersURL{
+                                FollowersView(followerUrl: followerLink)
+                            }
                         } label: {
                             HStack{
                                 Text(String(path?.followers ?? 0))
@@ -70,8 +72,10 @@ struct Profile: View {
                         Spacer()
                         
                         // folowing
-                        Button{
-                            print("following")
+                        NavigationLink{
+                            if let followerLink = path?.followingURL{
+                                FollowersView(followerUrl: followerLink)
+                            }
                         } label: {
                             HStack{
                                 Text(String(path?.following ?? 0))
