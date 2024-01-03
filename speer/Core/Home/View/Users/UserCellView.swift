@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserCellView: View {
+    let user: Item
+    @ObservedObject var viewModel = SearchViewModel()
     var body: some View {
         //navigationstack
         NavigationStack{
@@ -17,15 +20,18 @@ struct UserCellView: View {
                 } label: {
                     HStack(alignment: .center){
                         // image
-                        Image("meg")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                  
+                        KFImage(URL(string: user.avatarURL))
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50)
+                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        
+                       
                         
                         // info/ user name
                         VStack{
-                            Text("Thee Stallion")
+                            Text(user.login)
                                 .font(.subheadline)
                                 .fontWeight(.bold)
                             
@@ -45,6 +51,6 @@ struct UserCellView: View {
     }
 }
 
-#Preview {
-    UserCellView()
-}
+//#Preview {
+//    UserCellView(user: User)
+//}

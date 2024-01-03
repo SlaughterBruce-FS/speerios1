@@ -9,6 +9,8 @@ import Foundation
 
 class SearchViewModel: ObservableObject {
     @Published var items = [Item]()
+    @Published var isLoading = true
+    @Published var userTotal = 0
     
     init(searchText: String = "") {
         fetchUsers(searchText: searchText)
@@ -51,20 +53,23 @@ class SearchViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     // decode data based on items
                     self?.items = searchResultData.items
+                    self?.isLoading = false
+                    self?.userTotal = searchResultData.totalCount ?? 0
                 }
             } // debug errors
-            catch let DecodingError.dataCorrupted(context) {
-                print("Data corrupted: \(context)")
-            } catch let DecodingError.keyNotFound(key, context) {
-                print("Key '\(key)' not found: \(context.debugDescription)")
-                print("codingPath: \(context.codingPath)")
-            } catch let DecodingError.valueNotFound(value, context) {
-                print("Value '\(value)' not found: \(context.debugDescription)")
-                print("codingPath: \(context.codingPath)")
-            } catch let DecodingError.typeMismatch(type, context)  {
-                print("Type '\(type)' mismatch: \(context.debugDescription)")
-                print("codingPath: \(context.codingPath)")
-            } catch {
+//            catch let DecodingError.dataCorrupted(context) {
+//                print("Data corrupted: \(context)")
+//            } catch let DecodingError.keyNotFound(key, context) {
+//                print("Key '\(key)' not found: \(context.debugDescription)")
+//                print("codingPath: \(context.codingPath)")
+//            } catch let DecodingError.valueNotFound(value, context) {
+//                print("Value '\(value)' not found: \(context.debugDescription)")
+//                print("codingPath: \(context.codingPath)")
+//            } catch let DecodingError.typeMismatch(type, context)  {
+//                print("Type '\(type)' mismatch: \(context.debugDescription)")
+//                print("codingPath: \(context.codingPath)")
+//            } 
+            catch {
                 print("Error: \(error.localizedDescription)")
             }
         }

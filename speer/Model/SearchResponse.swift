@@ -12,9 +12,14 @@ struct SearchResponse: Codable {
     let incompleteResults: Bool?
     let items: [Item]
 
+    enum CodingKeys: String, CodingKey {
+           case totalCount = "total_count"
+           case incompleteResults = "incomplete_results"
+           case items
+       }
 }
 
-struct Item: Codable {
+struct Item: Codable, Identifiable {
     let login: String
     let id: Int
     let nodeID: String
