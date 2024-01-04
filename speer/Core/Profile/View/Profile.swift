@@ -67,8 +67,11 @@ struct Profile: View {
                             }
                             .padding(8)
                             .frame(width: 150)
-                            .background(Color(.systemGray6))
+                            .background(
+                                LinearGradient(gradient: Gradient(colors: [Color("gradient_1"), Color("gradient_2")]), startPoint: .leading, endPoint: .trailing)
+                            )
                             .cornerRadius(10)
+                            .foregroundStyle(.white)
                             
                             
                         }
@@ -91,8 +94,11 @@ struct Profile: View {
                         }
                         .padding(8)
                         .frame(width: 150)
-                        .background(Color(.systemGray6))
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color("gradient_1"), Color("gradient_2")]), startPoint: .leading, endPoint: .trailing)
+                        )
                         .cornerRadius(10)
+                        .foregroundStyle(.white)
                     }
                     .tint(.black)
                     .font(.subheadline)

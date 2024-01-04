@@ -33,13 +33,15 @@ struct SearchView: View {
             
         }
         .searchable(text: $searchText)
-//        .onChange(of: searchText) { oldValue, newValue in
-//           viewModel.fetchUsers(searchText: newValue)
-//        }
-        .onSubmit(of: .search) {
-                   // Handle submit action
-                   viewModel.fetchUsers(searchText: searchText)
-               }
+        .onChange(of: searchText) { oldValue, newValue in
+            print("Search text changed from \(oldValue) to \(newValue)")
+            viewModel.fetchUsers(searchText: newValue)
+        }
+
+//        .onSubmit(of: .search) {
+//                   // Handle submit action
+//                   viewModel.fetchUsers(searchText: searchText)
+//               }
     }
 }
 
