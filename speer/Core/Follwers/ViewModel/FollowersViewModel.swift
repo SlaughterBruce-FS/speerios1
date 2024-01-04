@@ -10,13 +10,14 @@ import Foundation
 class FollowersViewModel: ObservableObject {
     @Published var followers = Followers()
     @Published var isLoading = true
-    @Published var userTotal = 0
+    @Published var page = 1
+    
     
     init() {
     }
     
     func fetchFollowers(followerUrl: String) {
-        guard let url = URL(string: followerUrl) else {
+        guard let url = URL(string: "\(followerUrl)?per_page=40&page=\(page)") else {
             print("DEBUG: Invalid URL")
             return
         }
@@ -51,7 +52,7 @@ class FollowersViewModel: ObservableObject {
                 print(" check here \(searchResultData)")
                 DispatchQueue.main.async {
                     // decode data based on items
-                    self?.followers = searchResultData
+                    self?.followers.append(contentsOf: searchResultData)
                     self?.isLoading = false
                 }
             } // debug errors
@@ -74,4 +75,10 @@ class FollowersViewModel: ObservableObject {
         
         session.resume()
     }
+    
+    func loadMoreFollowers(followerUrl: String) {
+          page += 1
+          fetchFollowers(followerUrl: followerUrl)
+      }
 }
+

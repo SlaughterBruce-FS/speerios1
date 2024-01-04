@@ -17,6 +17,8 @@ struct Profile: View {
         self._viewModel = StateObject(wrappedValue: ProfileViewModel())
     }
     
+    private var  isFollowing = false
+    
     var body: some View {
         let path = viewModel.user
         NavigationStack{
@@ -51,9 +53,11 @@ struct Profile: View {
                     HStack{
                         //folowers
                         NavigationLink{
-                            if let followerLink = path?.followersURL{
-                                FollowersView(followerUrl: followerLink)
+                            if let url = path?.followersURL{
+                                FollowersView(followerUrl: url)
                             }
+                            
+//                              Text("follers")
                         } label: {
                             HStack{
                                 Text(String(path?.followers ?? 0))
@@ -73,9 +77,10 @@ struct Profile: View {
                         
                         // folowing
                         NavigationLink{
-                            if let followerLink = path?.followingURL{
-                                FollowersView(followerUrl: followerLink)
+                            if let url = path?.login{
+                                FollowersView(followerUrl: "https://api.github.com/users/\(url)/following")
                             }
+                            
                         } label: {
                             HStack{
                                 Text(String(path?.following ?? 0))
@@ -102,6 +107,9 @@ struct Profile: View {
         }
         .navigationTitle(viewModel.user?.login ?? "user")
     }
+    
+    
+
 }
 
 #Preview {
